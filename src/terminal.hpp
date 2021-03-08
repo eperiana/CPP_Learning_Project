@@ -4,6 +4,8 @@
 #include "aircraft.hpp"
 #include "geometry.hpp"
 
+#include <cassert>
+
 class Terminal : public GL::DynamicObject
 {
 private:
@@ -13,9 +15,9 @@ private:
 
     Terminal(const Terminal&) = delete;
     Terminal& operator=(const Terminal&) = delete;
+
 public:
     Terminal(const Point3D& pos_) : pos { pos_ } {}
-
 
     bool in_use() const { return current_aircraft != nullptr; }
     bool is_servicing() const { return service_progress < SERVICE_CYCLES; }
@@ -37,11 +39,13 @@ public:
         }
     }
 
-    void move() override
+    bool update() override
     {
         if (in_use() && is_servicing())
         {
             ++service_progress;
         }
+
+        return true;
     }
 };

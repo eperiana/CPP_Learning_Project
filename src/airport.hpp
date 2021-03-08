@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include "GL/displayable.hpp"
@@ -29,7 +30,7 @@ private:
     std::pair<WaypointQueue, size_t> reserve_terminal(Aircraft& aircraft)
     {
         const auto it =
-            std::find_if(terminals.begin(), terminals.end(), [](const Terminal& t) { return !t.in_use(); });
+                std::find_if(terminals.begin(), terminals.end(), [](const Terminal& t) { return !t.in_use(); });
 
         if (it != terminals.end())
         {
@@ -52,24 +53,26 @@ private:
 
 public:
     Airport(const AirportType& type_, const Point3D& pos_, const img::Image* image, const float z_ = 1.0f) :
-        GL::Displayable { z_ },
-        type { type_ },
-        pos { pos_ },
-        texture { image },
-        terminals { type.create_terminals() },
-        tower { *this }
+            GL::Displayable { z_ },
+            type { type_ },
+            pos { pos_ },
+            texture { image },
+            terminals { type.create_terminals() },
+            tower { *this }
     {}
 
     Tower& get_tower() { return tower; }
 
     void display() const override { texture.draw(project_2D(pos), { 2.0f, 2.0f }); }
 
-    void move() override
+    bool update() override
     {
         for (auto& t : terminals)
         {
-            t.move();
+            t.update();
         }
+
+        return true;
     }
 
     friend class Tower;

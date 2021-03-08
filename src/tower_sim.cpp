@@ -7,6 +7,8 @@
 #include "img/image.hpp"
 #include "img/media_path.hpp"
 
+#include <algorithm>
+#include <cassert>
 #include <cstdlib>
 #include <ctime>
 
@@ -15,7 +17,7 @@ using namespace std::string_literals;
 const std::string airlines[8] = { "AF", "LH", "EY", "DL", "KL", "BA", "AY", "EY" };
 
 TowerSimulation::TowerSimulation(int argc, char** argv) :
-    help { (argc > 1) && (std::string { argv[1] } == "--help"s || std::string { argv[1] } == "-h"s) }
+        help { (argc > 1) && (std::string { argv[1] } == "--help"s || std::string { argv[1] } == "-h"s) }
 {
     MediaPath::initialize(argv[0]);
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -39,7 +41,6 @@ void TowerSimulation::create_aircraft(const AircraftType& type) const
     const Point3D direction = (-start).normalize();
 
     Aircraft* aircraft = new Aircraft { type, flight_number, start, direction, airport->get_tower() };
-    GL::display_queue.emplace_back(aircraft);
     GL::move_queue.emplace(aircraft);
 }
 
@@ -56,6 +57,19 @@ void TowerSimulation::create_keystrokes() const
     GL::keystrokes.emplace('+', []() { GL::change_zoom(0.95f); });
     GL::keystrokes.emplace('-', []() { GL::change_zoom(1.05f); });
     GL::keystrokes.emplace('f', []() { GL::toggle_fullscreen(); });
+
+    // TASK_0 C-2: framerate control
+    // Framerate cannot equal 0 or the program would get stuck / crash.
+    // Also, in a "real" program, the maximal framerate should always be capped (you can see why if you do the
+    // bonus part).
+    GL::keystrokes.emplace('z', []() { GL::ticks_per_sec = std::max(GL::ticks_per_sec - 1u, 1u); });
+    GL::keystrokes.emplace('a', []() { GL::ticks_per_sec = std::min(GL::ticks_per_sec + 1u, 180u); });
+
+    // TASK_0 C-2: pause
+    // Since the framerate cannot be 0, we introduce a new variable to manage this info.
+    // Also, it would make no sense to use the framerate to simulate the pause, cause how would we unpause if
+    // the program is not running anymore ?
+    GL::keystrokes.emplace('p', []() { GL::is_paused = !GL::is_paused; });
 }
 
 void TowerSimulation::display_help() const
@@ -76,7 +90,6 @@ void TowerSimulation::init_airport()
     airport = new Airport { one_lane_airport, Point3D { 0, 0, 0 },
                             new img::Image { one_lane_airport_sprite_path.get_full_path() } };
 
-    GL::display_queue.emplace_back(airport);
     GL::move_queue.emplace(airport);
 }
 

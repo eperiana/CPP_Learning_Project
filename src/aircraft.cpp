@@ -32,7 +32,7 @@ unsigned int Aircraft::get_speed_octant() const
     {
         const Point3D norm_speed { speed * (1.0f / speed_len) };
         const float angle =
-            (norm_speed.y() > 0) ? 2.0f * 3.141592f - std::acos(norm_speed.x()) : std::acos(norm_speed.x());
+                (norm_speed.y() > 0) ? 2.0f * 3.141592f - std::acos(norm_speed.x()) : std::acos(norm_speed.x());
         // partition into NUM_AIRCRAFT_TILES equal pieces
         return (static_cast<int>(std::round((angle * NUM_AIRCRAFT_TILES) / (2.0f * 3.141592f))) + 1) %
                NUM_AIRCRAFT_TILES;
@@ -88,10 +88,15 @@ void Aircraft::add_waypoint(const Waypoint& wp, const bool front)
     }
 }
 
-void Aircraft::move()
+bool Aircraft::update()
 {
     if (waypoints.empty())
     {
+        if (is_service_done)
+        {
+            return false;
+        }
+
         waypoints = control.get_instructions(*this);
     }
 
@@ -136,6 +141,8 @@ void Aircraft::move()
         // update the z-value of the displayable structure
         GL::Displayable::z = pos.x() + pos.y();
     }
+
+    return true;
 }
 
 void Aircraft::display() const

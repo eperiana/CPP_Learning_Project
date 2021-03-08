@@ -1,11 +1,13 @@
 #pragma once
 
+#include "GL/displayable.hpp"
 #include "aircraft_types.hpp"
 #include "config.hpp"
 #include "geometry.hpp"
 #include "tower.hpp"
 #include "waypoint.hpp"
 
+#include <string>
 #include <string_view>
 
 class Aircraft : public GL::Displayable, public GL::DynamicObject
@@ -18,6 +20,12 @@ private:
     Tower& control;
     bool landing_gear_deployed = false; // is the landing gear deployed?
     bool is_at_terminal        = false;
+
+    // TASK-0 C-3
+    // L'endroit le plus approprié pour retirer l'avion, c'est lorsque :
+    // 1. l'attérissage a déjà eu lieu => on ajoute un attribut
+    // 2. l'avion a terminé sa course de décollage => waypoints.empty()
+    bool is_service_done = false;
 
     // turn the aircraft to arrive at the next waypoint
     // try to facilitate reaching the waypoint after the next by facing the
@@ -45,12 +53,12 @@ private:
 public:
     Aircraft(const AircraftType& type_, const std::string_view& flight_number_, const Point3D& pos_,
              const Point3D& speed_, Tower& control_) :
-        GL::Displayable { pos.x() + pos.y() },
-        type { type_ },
-        flight_number { flight_number_ },
-        pos { pos_ },
-        speed { speed_ },
-        control { control_ }
+            GL::Displayable { pos_.x() + pos_.y() },
+            type { type_ },
+            flight_number { flight_number_ },
+            pos { pos_ },
+            speed { speed_ },
+            control { control_ }
     {
         speed.cap_length(max_speed());
     }
@@ -59,7 +67,7 @@ public:
     float distance_to(const Point3D& p) const { return pos.distance_to(p); }
 
     void display() const override;
-    void move() override;
+    bool update() override;
 
     friend class Tower;
 };

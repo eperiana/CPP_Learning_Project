@@ -1,0 +1,268 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/AircraftManager.hpp
+memory
+-
+unordered_set
+-
+aircraft.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft.hpp
+airport.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/airport.hpp
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/displayable.hpp
+algorithm
+-
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/dynamic_object.hpp
+unordered_set
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/opengl_interface.hpp
+../config.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/config.hpp
+../geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+displayable.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/displayable.hpp
+dynamic_object.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/dynamic_object.hpp
+GL/freeglut.h
+-
+algorithm
+-
+cassert
+-
+functional
+-
+memory
+-
+set
+-
+string
+-
+unordered_map
+-
+unordered_set
+-
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/texture.hpp
+../img/image.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/image.hpp
+opengl_interface.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/opengl_interface.hpp
+GL/glut.h
+-
+array
+-
+cassert
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft.hpp
+GL/displayable.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/displayable.hpp
+aircraft_types.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft_types.hpp
+config.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/config.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+tower.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower.hpp
+waypoint.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/waypoint.hpp
+string
+-
+string_view
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft_types.hpp
+GL/texture.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/texture.hpp
+img/image.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/image.hpp
+img/media_path.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/media_path.hpp
+array
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/airport.hpp
+GL/displayable.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/displayable.hpp
+GL/dynamic_object.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/dynamic_object.hpp
+GL/texture.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/texture.hpp
+airport_type.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/airport_type.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+img/image.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/image.hpp
+runway.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/runway.hpp
+terminal.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/terminal.hpp
+tower.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower.hpp
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/airport_type.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+runway.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/runway.hpp
+terminal.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/terminal.hpp
+waypoint.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/waypoint.hpp
+initializer_list
+-
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/config.hpp
+img/media_path.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/media_path.hpp
+stdexcept
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+algorithm
+-
+array
+-
+cassert
+-
+cmath
+-
+iostream
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/image.hpp
+../config.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/config.hpp
+stb_image.h
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/stb_image.h
+filesystem
+-
+string
+-
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/media_path.hpp
+filesystem
+-
+stdexcept
+-
+string
+-
+string_view
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/stb_image.h
+stb_image.h
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/stb_image.h
+stdio.h
+-
+stdlib.h
+-
+stdarg.h
+-
+stddef.h
+-
+stdlib.h
+-
+string.h
+-
+limits.h
+-
+math.h
+-
+stdio.h
+-
+assert.h
+-
+stdint.h
+-
+emmintrin.h
+-
+intrin.h
+-
+arm_neon.h
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/main.cpp
+tower_sim.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower_sim.hpp
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/runway.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/terminal.hpp
+GL/dynamic_object.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/dynamic_object.hpp
+aircraft.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+cassert
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower.hpp
+waypoint.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/waypoint.hpp
+map
+-
+utility
+-
+vector
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower_sim.cpp
+tower_sim.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower_sim.hpp
+GL/opengl_interface.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/GL/opengl_interface.hpp
+aircraft.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/aircraft.hpp
+airport.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/airport.hpp
+config.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/config.hpp
+img/image.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/image.hpp
+img/media_path.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/img/media_path.hpp
+algorithm
+-
+cassert
+-
+cstdlib
+-
+ctime
+-
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/tower_sim.hpp
+AircraftManager.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/AircraftManager.hpp
+
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/waypoint.hpp
+geometry.hpp
+/home/etienne/Documents/M1 2020-2021/C++/CPP_Learning_Project/src/geometry.hpp
+deque
+-
+
